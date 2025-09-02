@@ -1,0 +1,154 @@
+:root {
+  /* Background utama */
+  --ink: #e9f2ff;
+  --bg: #0a0014;       /* base dark */
+  --bg-purple: #1c042b; /* ungu neon */
+  --electric-blue: #2d044e; /* biru elektrik */
+
+  /* Aksen neon */
+  --neon-purple: #7510b0;  
+  --neon-blue: #00d4ff;    
+  --neon-cyan: #00ffe0;    
+
+  /* Teks */
+  --text-light: #e9f2ff;  
+  --text-muted: #9aa0b8;  
+
+  /* Tombol */
+  --btn-primary: #7510b0;   
+  --btn-hover: #560088;     
+  --btn-alt: #00d4ff;       
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 30%, var(--bg-purple) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, var(--electric-blue) 0%, transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Quicksand", sans-serif;
+}
+.page-frame {position: relative;border-radius: 14px;padding: 20px;background: rgba(18, 26, 43, 0.8);}
+.page-frame::before {content: "";position: absolute;inset: 0;border-radius: 14px;padding: 2px;background: linear-gradient(90deg, #7510b0, #d5afeb);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;mask-composite: exclude; 
+}
+.title-nav{font-family: 'Courier New', Courier, monospace;letter-spacing: .3px;}
+.navbar .nav-link {color: #e9f2ff;padding: 6px 14px;position: relative;transition: color 0.3s ease;}
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; 
+  width: 0;
+  height: 2px;
+  background-color: #fbf5ff; 
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {width: 100%;}
+.navbar .nav-link.active::after {width: 100%;}
+.btn-primary{background: var(--btn-primary);border: none;}
+.btn-primary:hover{background: var(--btn-hover);}
+
+/* Hero Section */
+.desc .title{font-size: 1.20rem;font-family: "Lato", sans-serif;text-align: justify;}
+.title span{color: var(--neon-blue);font-weight: bold;}
+.desc a{font-weight: 600;background: var(--btn-primary);}
+.desc a:hover{background: var(--btn-hover);}
+.desc .btn-venue{font-weight: 600;background: transparent;}
+.desc .btn-venue:hover{background: #fff;color: #0a0014;font-weight: 600;transition: ease-in;}
+#home .hero-img{width: 80%;}
+.countdown {font-family: 'Poppins', sans-serif;}
+.time-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #a855f7; 
+  text-align: center;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 90px;
+  color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+.time-box:hover {transform: scale(1.05);}
+.time-box span {display: block;font-size: 1.20rem;font-weight: bold;color: #ffd700; }
+.time-box .line{
+    display: inline-block;
+    width: 2px;      
+    height: 30px;    
+    background-color: rgb(148, 144, 144, .3);
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+.time-box p {margin: 0;font-size: 0.9rem;color: #e5e7eb;}
+.info span {font-weight: 500;font-size: 13px;font-family: 'Poppins', sans-serif;padding: .37rem .6rem;}
+.venue-chip-date{background: #C77DFF;color: #2E0249;}
+.venue-chip-clock{background: #FFD700;color: #1A052E;}
+.venue-chip-tmpt{background: #00E5FF;color: #0A192F;}
+
+/* About Section */
+#about .title{font-size: 17px;text-align: justify;font-family: "Lato", sans-serif;}
+.Highlights{background: rgba(255,255,255,.08);border: 1px solid rgba(255,255,255,.2);border-radius: .8rem; padding: .25rem .6rem;}
+
+/* ticketing */
+.ticket-title{
+    justify-content: center; 
+    align-items: center;  
+    text-align: center;  
+    height: 100%;          
+}
+.ticket-title h2{font-family: 'Courier New', Courier, monospace;}
+.card{background: rgba(255,255,255,.08);transition: transform 0.2s ease, box-shadow 0.2s ease; height: 100%;}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+.card-text {flex-grow: 1; }
+.card:hover{
+    border: 1px solid var(--neon-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+.card-body h5{
+    font-weight: 600;
+    font-size: 13px;
+    width: max-content;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    padding: .37rem .6rem;
+}
+.card-body .title-dream{background: #03f537;color: #000000;}
+.card-body .title-future{background: #00ffe0;color: #000000;}
+.card-body .title-1{background: #ffd700;color: #000000f8;}
+.card-body .title-2{background: #faa7d1;color: #000000;}
+.card-body .title-3{background: #f00797;color: #000000;}
+.card-body .title-4{background: #8f06b1;color: #000000;}
+.card-body .price{font-weight: bold;padding: 10px 0;}
+.card-text strong{color: #9aa0b8;}
+.benefit {display: flex;flex-direction: column;gap: 6px; margin: 8px 0px; }
+.benefit span {display: flex;align-items: center;font-size: 0.85rem;}
+.benefit i {color: var(--neon-cyan); margin-right: 8px;font-size: 1rem;}
+.card-body button:hover{background: var(--btn-hover);}
+.card-body button{width: 100% !important;}
+.modal-content{background: var(--bg-purple);}
+.modal-content input{background: none;}
+.modal-content input:focus{background: none; border-color: var(--btn-primary);}
+.bag-icon{align-items: start; margin:10px;}
+.bag-icon i{ background: rgba(255,255,255,.08); border-radius: 100%; padding: 10px;}
+.bag-icon i:hover{background: var(--btn-hover);}
+.badge{background: var(--neon-cyan); color: var(--bg-purple); font-weight: bold;}
+.form-select {background-color: #2b0040; color: #fff; border: 1px solid var(--btn-primary);}
+.form-select option {background-color: #2b0040; color: #fff;}
+.form-select option:disabled {color: #aaa; }
+.card-img-top{width: 100%;height: 250px;object-fit: cover;}
+#merch .card{height: 100%;}
+.contact-desc{text-align: left; border: 2px solid transparent; background: rgba(255,255,255,.08); border-radius: 20px; padding: 10px;}
+.contact-form{border: 2px solid var(--btn-primary); padding: 20px; border-radius: 20px;}
+.contact-form input{background: none;}
+.contact-form textarea{background: none;}
+.contact-form input:focus{background: none; border-color: var(--btn-primary);}
+.contact-form textarea:focus{background: none; border-color: var(--btn-primary);}
+
